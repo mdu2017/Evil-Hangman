@@ -1,0 +1,25 @@
+NOTES MEETING 11/6
+
+Get length of word from user (n)
+
+Iterate through dictionary (25,602 words), insert only n-size words into data structure
+
+Data structure: <map> from STL which is basically a hash table?
+	- Find: best is O(1), avg is O(1), worst is O(n)
+
+
+For each character guess
+	For each word in data structure
+		If word contains character c (use string.find() here?)
+			remove word, rehash?
+
+
+*May try copying code in book that uses <map> and test speed
+
+-----------------------------
+
+Also talked about STL vector, not sure if necessary.
+Talked about minHeap. 
+
+
+			 
