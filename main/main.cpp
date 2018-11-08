@@ -24,41 +24,44 @@ bool TRACE = false;
 
 int main(int argc, char **argv) {
 
-    g = new SDL_Plotter(1000,1000);
-    data = new int[g->getCol()];
+    SDL_Plotter g(1000,1000);
+    bool stopped = false;
+    bool colored = false;
+    int x,y, xd, yd;
+    int R,G,B;
 
+    while (!g.getQuit())
+    {
+        if(!stopped){
+            x = rand()%g.getCol();
+            y = rand()%g.getRow();
+            R = rand()%256;
+            G = rand()%256;
+            B = rand()%256;
+            for(xd = 0; xd < 10 && x + xd < g.getCol(); xd++ ){
+                for(yd = 0; yd < 10 && y + yd < g.getRow(); yd++ ){
+                    if(colored){
+                        g.plotPixel( x + xd, y + yd, R, G, B);
+                    }
+                    else{
+                        g.plotPixel( x + xd, y + yd, 0, G, 0);
+                    }
 
-    for(int i =0; i < g->getCol(); i++){
-        data[i] = rand()%g->getCol();
-    }
-
-    while(!g->getQuit()){
-
-        if(g->kbhit()){
-            switch(g->getKey()){
-                case 'B': ;
-                    break;
-                case 'R': ;
-                    break;
-                case 'S': ;
-                    break;
-                case 'I': ;
-                    break;
-                case 'H': ;
-                    break;
-                case 'Q': ;
-                    break;
-                case 'M': ;
-                    break;
-                case 'T': TRACE = !TRACE;
-                    break;
-                case 'C': g->clear();
-                    break;
-                case 'X': g->setQuit(true);
-                    break;
+                }
             }
         }
+
+        if(g.kbhit()){
+            g.getKey();
+        }
+
+        if(g.getMouseClick(x,y)){
+            stopped = !stopped;
+        }
+
+        g.update();
     }
+
 
     //=========================
     // Test section

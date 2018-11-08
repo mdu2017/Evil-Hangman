@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+H:/CSI_3334/Evil-Hangman/main/SDL_Plotter.h
+SDL2/SDL.h
+-
+SDL2/SDL_mixer.h
+-
+string.h
+-
+iostream
+-
+string
+-
+string.h
+-
+map
+-
+
+H:/CSI_3334/Evil-Hangman/main/main.cpp
+SDL_Plotter.h
+H:/CSI_3334/Evil-Hangman/main/SDL_Plotter.h
+cstdlib
+-
+list
+-
+algorithm
+-
+vector
+-
+string
+-
+fstream
+-
+
