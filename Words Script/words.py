@@ -16,8 +16,8 @@ with open('words.txt') as f:
         if(len(line) > maxLen):
             maxLen = len(line) - 1
             maxWord = line
-    print('Total number of words: {} and maxWord: {} is length: {}'.format(numWords, maxWord, maxLen))
-    output.write('Total number of words: {} and maxWord: {} is length: {}'.format(numWords, maxWord, maxLen))
+    print('Total number of words: {} \n and maxWord: {} is length: {}'.format(numWords, maxWord, maxLen))
+    output.write('Total number of words: {} \n and maxWord: {} is length: {}'.format(numWords, maxWord, maxLen))
 
 
 #create dictionary to keep track of frequency of words at different sizes, up to 22
@@ -35,7 +35,7 @@ with open('words.txt') as f:
         #print(length)
     
 print('\nThe amount of words of length: {}'.format(wordFreq))
-output.write('\nThe amount of words of length: {}'.format(wordFreq))
+output.write('\nThe amount of words of length:\n{}'.format(wordFreq))
 
 x = []
 y = []
