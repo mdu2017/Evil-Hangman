@@ -11,49 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7633174-7545-4987-a590-260ee603a8d0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Evil-Hangman.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/dictionary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/linklibs.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/objects1.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/GroupProject.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/evilHangman.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/evilHangman.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/evilHangman.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/cmake-build-debug/evilHangman.exe" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/cmake-build-debug/evilHangman.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prototype/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/prototype/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="c7633174-7545-4987-a590-260ee603a8d0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/prototype/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/main/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,10 +25,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/prototype/main.cpp">
+        <entry file="file://$PROJECT_DIR$/main/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+            <state relative-caret-position="413">
+              <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
               <folding>
                 <element signature="e#249#273#0" expanded="true" />
               </folding>
@@ -77,7 +37,7 @@
         </entry>
       </file>
       <file leaf-file-name="dictionary.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prototype/cmake-build-debug/dictionary.txt">
+        <entry file="file://$PROJECT_DIR$/main/cmake-build-debug/dictionary.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-12489">
               <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
@@ -127,12 +87,12 @@
             <path>
               <item name="evilHangman" type="b2602c69:ProjectViewProjectNode" />
               <item name="Evil-Hangman" type="462c0819:PsiDirectoryNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="evilHangman" type="b2602c69:ProjectViewProjectNode" />
               <item name="Evil-Hangman" type="462c0819:PsiDirectoryNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -183,12 +143,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541715608444</updated>
-      <workItem from="1541715610350" duration="4604000" />
+      <workItem from="1541715610350" duration="4842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4604000" />
+    <option name="totallyTimeSpent" value="4842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -197,7 +157,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" weight="0.31880978" />
-      <window_info anchor="bottom" id="CMake" />
+      <window_info anchor="bottom" id="CMake" weight="0.32943678" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30074388" />
@@ -221,17 +181,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prototype/cmake-build-debug/dictionary.txt">
+    <entry file="file://$PROJECT_DIR$/main/cmake-build-debug/dictionary.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12489">
           <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prototype/main.cpp">
+    <entry file="file://$PROJECT_DIR$/main/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+        <state relative-caret-position="413">
+          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
           <folding>
             <element signature="e#249#273#0" expanded="true" />
           </folding>
