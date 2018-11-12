@@ -20,4 +20,4 @@ To run the program:
 1. Go into directory of your choice and clone the repository
 2. Open the project folder in CLion and run the program.
 
-*Note: move input files into the CMake-Debug folder to read them using ifstream
+*Note: move input files into the cmake-build-debug folder to read them using ifstream
