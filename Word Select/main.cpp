@@ -49,7 +49,7 @@ vector<string> getGreatest(int size, char guess, vector<string> wordList){
             for(int i = 0; i < size; i ++){
                 if(n.at(i) == guess){
                     letterMap[i] = 1;
-                    letterHash += pow(2,i);
+                    letterHash += n[i] + i;
                     count++;
                 }
             }
