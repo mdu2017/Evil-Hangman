@@ -5,12 +5,13 @@
 
 using namespace std;
 
-const int MAX_BINS = 50;
+const int MAX_BINS = 3989;
 
 vector<string> getGreatest(int size, char guess, vector<string> wordList){
     vector<string> bins[MAX_BINS];
     int count = 0, currentBin = size;
     int letterMap[size] = {0};
+    int letterHash = 0;
     bool already = false;
     int maxWords = 0;
     int maxWordsIndex = 1;
@@ -45,15 +46,20 @@ vector<string> getGreatest(int size, char guess, vector<string> wordList){
                 }
         }
         else{
-            //for(int i = 0; i < size; i ++){
-            //    if(n.at(i) == guess){
-            //        letterMap[i] = 1;
-            //        count++;
-            //    }
-            //    if(count> 1){
-            //        already = true;
-            //    }
-            //}
+            for(int i = 0; i < size; i ++){
+                if(n.at(i) == guess){
+                    letterMap[i] = 1;
+                    letterHash += pow(2,i);
+                    count++;
+                }
+            }
+            bins[letterHash].push_back(n);
+            num[letterHash]++;
+            if(maxWords < num[letterHash]){
+                maxWords = num[letterHash];
+                maxWordsIndex = letterHash;
+            }
+            /*
             for(int i = 0; i < size; i ++){
                 if(n.at(i) == guess){
                     if(!already){
@@ -70,7 +76,16 @@ vector<string> getGreatest(int size, char guess, vector<string> wordList){
                     }
                 }
             }
+            */
         }
+        for(int j = 0; j < size; j++){
+            //cout<<letterMap[j];
+            letterMap[j] = 0;
+        }
+        //cout<<letterHash<<endl;
+        //cout<<endl;
+        letterHash = 0;
+        count = 0;
         already = false;
     }
     return bins[maxWordsIndex];
@@ -176,6 +191,9 @@ int main() {
             case 'z':
                 wordList = getGreatest(size, guess, wordList);
                 break;
+        }
+        for(int i = 0; i < size; i++){
+
         }
         for(auto n : wordList){
             cout<<n<<endl;
