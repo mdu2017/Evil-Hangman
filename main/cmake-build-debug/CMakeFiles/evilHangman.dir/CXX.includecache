@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-H:/CSI_3334/Evil-Hangman/main/SDL_Plotter.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/SDL_Plotter.h
 SDL2/SDL.h
 -
 SDL2/SDL_mixer.h
@@ -22,9 +22,27 @@ string.h
 map
 -
 
-H:/CSI_3334/Evil-Hangman/main/main.cpp
+C:/Users/Mark/Desktop/Evil-Hangman/main/color.h
+
+C:/Users/Mark/Desktop/Evil-Hangman/main/line.h
+cmath
+-
+ostream
+-
+color.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/color.h
+point.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/point.h
 SDL_Plotter.h
-H:/CSI_3334/Evil-Hangman/main/SDL_Plotter.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/SDL_Plotter.h
+
+C:/Users/Mark/Desktop/Evil-Hangman/main/main.cpp
+SDL_Plotter.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/SDL_Plotter.h
+line.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/line.h
+rectangle.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/rectangle.h
 cstdlib
 -
 list
@@ -36,5 +54,19 @@ vector
 string
 -
 fstream
+-
+cmath
+-
+
+C:/Users/Mark/Desktop/Evil-Hangman/main/point.h
+
+C:/Users/Mark/Desktop/Evil-Hangman/main/rectangle.h
+point.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/point.h
+color.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/color.h
+SDL_Plotter.h
+C:/Users/Mark/Desktop/Evil-Hangman/main/SDL_Plotter.h
+cmath
 -
 
