@@ -1,15 +1,12 @@
 /*
-* Author: Grant Gasser
-* Assignment Title: Project 3 Sorting Visualization
-* Assignment Description: This program helps visualize different sorting algorithms
-* Due Date: 11/11/2018
-* Date Created: 11/5/2018
-* Date Last Modified: 11/11/2018
- */
+* Edited by Grant on 11/19.
+* Added First line to UI. Need to make drawing of lines dynamic.
+*/
 
 #include "SDL_Plotter.h"
 #include "line.h"
 #include "rectangle.h"
+#include <iostream>
 #include <cstdlib>
 #include <list>
 #include <algorithm>
@@ -37,6 +34,7 @@ const Line LEFT_ARM(Point(500, 225), Point(425, 300), BLUE);
 const Line RIGHT_ARM(Point(500, 225), Point(575, 300), BLUE);
 const Line LEFT_LEG(Point(501,325), Point(450, 425), BLUE);
 const Line RIGHT_LEG(Point(501, 325), Point(550, 425), BLUE);
+const Line LETTER_LINES(Point(150, 600), Point(250, 600), BLACK);
 
 //Functions for drawing body parts
 void drawHead(SDL_Plotter& g, int radius, int centerX, int centerY);
@@ -45,6 +43,7 @@ void drawLeftArm(SDL_Plotter& g, Line lArm);
 void drawRightArm(SDL_Plotter& g, Line rArm);
 void drawLeftLeg(SDL_Plotter& g, Line lLeg);
 void drawRightLeg(SDL_Plotter& g, Line rLeg);
+void drawLines(SDL_Plotter& g, Line line);
 
 //Rectangle for hanger
 const Rectangle BASE(Point(150, 450), Point(350, 500), BLACK);
@@ -58,11 +57,17 @@ int main(int argc, char **argv) {
     bool stopped = false;
     int R,G,B;
     int headRadius = 10;
-    int x, y;
+    int x, y, size;
+
+    cout << "Enter the size of the word you want to play." << endl;
+    cin >> size;
 
 
     while (!g.getQuit())
     {
+        //draw lines
+        drawLines(g, LETTER_LINES);
+
         drawBody(g, BODY);
         drawHead(g, HEAD_RADIUS, HEAD_CENTER_X, HEAD_CENTER_Y);
         drawLeftArm(g, LEFT_ARM);
@@ -128,4 +133,8 @@ void drawLeftLeg(SDL_Plotter& g, Line lLeg){
 
 void drawRightLeg(SDL_Plotter& g, Line rLeg){
     rLeg.draw(g);
+}
+
+void drawLines(SDL_Plotter& g, Line line){
+    line.draw(g);
 }
