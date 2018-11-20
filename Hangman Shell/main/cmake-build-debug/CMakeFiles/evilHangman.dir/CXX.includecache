@@ -1,0 +1,74 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+H:/CSI 3334/Evil-Hangman/main/SDL_Plotter.h
+SDL2/SDL.h
+-
+SDL2/SDL_mixer.h
+-
+string.h
+-
+iostream
+-
+string
+-
+string.h
+-
+map
+-
+
+H:/CSI 3334/Evil-Hangman/main/color.h
+
+H:/CSI 3334/Evil-Hangman/main/line.h
+cmath
+-
+ostream
+-
+color.h
+H:/CSI 3334/Evil-Hangman/main/color.h
+point.h
+H:/CSI 3334/Evil-Hangman/main/point.h
+SDL_Plotter.h
+H:/CSI 3334/Evil-Hangman/main/SDL_Plotter.h
+
+H:/CSI 3334/Evil-Hangman/main/main.cpp
+SDL_Plotter.h
+H:/CSI 3334/Evil-Hangman/main/SDL_Plotter.h
+line.h
+H:/CSI 3334/Evil-Hangman/main/line.h
+rectangle.h
+H:/CSI 3334/Evil-Hangman/main/rectangle.h
+iostream
+-
+cstdlib
+-
+list
+-
+algorithm
+-
+vector
+-
+string
+-
+fstream
+-
+cmath
+-
+
+H:/CSI 3334/Evil-Hangman/main/point.h
+
+H:/CSI 3334/Evil-Hangman/main/rectangle.h
+point.h
+H:/CSI 3334/Evil-Hangman/main/point.h
+color.h
+H:/CSI 3334/Evil-Hangman/main/color.h
+SDL_Plotter.h
+H:/CSI 3334/Evil-Hangman/main/SDL_Plotter.h
+cmath
+-
+
