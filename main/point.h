@@ -5,6 +5,8 @@
 #ifndef EVILHANGMAN_POINT_H
 #define EVILHANGMAN_POINT_H
 
+#include <cmath>
+
 struct Point
 {
     double x;

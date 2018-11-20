@@ -6,6 +6,7 @@
 #include "SDL_Plotter.h"
 #include "line.h"
 #include "rectangle.h"
+#include "Letter.h"
 #include <iostream>
 #include <cstdlib>
 #include <list>
@@ -39,6 +40,7 @@ const Line LEFT_ARM(Point(500, 225), Point(425, 300), BLUE);
 const Line RIGHT_ARM(Point(500, 225), Point(575, 300), BLUE);
 const Line LEFT_LEG(Point(501,325), Point(450, 425), BLUE);
 const Line RIGHT_LEG(Point(501, 325), Point(550, 425), BLUE);
+const Line LETTER_LINES(Point(150, 600), Point(250, 600), BLACK);
 
 //Functions for drawing body parts
 void drawHead(SDL_Plotter& g, int radius, int centerX, int centerY);
@@ -57,18 +59,39 @@ const Rectangle ROPE(Point(497, 100), Point(500, 150), RED);
 
 int main(int argc, char **argv) {
 
-    SDL_Plotter g(720,1200);
+    SDL_Plotter g(720,1080);
     bool stopped = false;
-    int R,G,B;
-    int headRadius = 10;
-    int x, y, size, newX;
-    
+    int x, y, size;
+    int newX;
+    int letterScale;
+    int letterOffsetX;
+    int letterOffsetY;
 
     cout << "Enter the size of the word you want to play." << endl;
     cin >> size;
 
     //Set line length based on size
     int lineLength = (480/size);
+    letterOffsetX = lineLength/2;
+
+    //Create letter array and scale based on size
+    Letter letters[size];
+    if(size >= 14){
+        letterScale = 1;
+        letterOffsetX -= 5;
+        letterOffsetY = -20;
+    }
+    else if(size >= 10){
+        letterScale = 2;
+        letterOffsetX -= 10;
+        letterOffsetY = -30;
+    }
+    else{
+        letterScale = 3;
+        letterOffsetX -= 15;
+        letterOffsetY = -40;
+    }
+
 
     while (!g.getQuit())
     {
@@ -76,14 +99,24 @@ int main(int argc, char **argv) {
         Line FIRST_LINE(Point(INIT_X, LINES_Y), Point(INIT_X + lineLength, LINES_Y), BLACK);
         drawLines(g, FIRST_LINE);
 
-        //draw line
-        for(int i = 1; i < size; i++){
+        //draw lines and letters
+        for(int i = 0; i < size; i++){
             newX = INIT_X + (i*SPACE_BTWN_LINES) + (i*lineLength);
 
             Line *newLine = new Line(Point(newX, LINES_Y), Point(newX+lineLength,LINES_Y), BLACK);
             drawLines(g, *newLine);
+
+            //Set the letter's coordinates
+            letters[i] = Letter('P', GREEN, letterScale,
+                    Point(newX + letterOffsetX, LINES_Y + letterOffsetY));
         }
 
+        //Draw the letters (we can set each letter depending on kbhit later)
+        for(int i = 0; i < size; i++){
+            letters[i].draw(g);
+        }
+
+        //Draw stick figure
         drawBody(g, BODY);
         drawHead(g, HEAD_RADIUS, HEAD_CENTER_X, HEAD_CENTER_Y);
         drawLeftArm(g, LEFT_ARM);
@@ -91,6 +124,7 @@ int main(int argc, char **argv) {
         drawLeftLeg(g, LEFT_LEG);
         drawRightLeg(g, RIGHT_LEG);
 
+        //Draw base
         BASE.draw(g);
         BASE2.draw(g);
         BASE3.draw(g);
@@ -154,3 +188,9 @@ void drawRightLeg(SDL_Plotter& g, Line rLeg){
 void drawLines(SDL_Plotter& g, Line line){
     line.draw(g);
 }
+
+//    //Prints gg
+//    Letter test('G', RED, 5, Point(600, 300));
+//    Letter test2('G', RED, 5, Point(700, 300));
+//    test.draw(g);
+//    test2.draw(g);

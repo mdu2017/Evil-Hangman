@@ -1,3 +1,3 @@
-C:/Users/Mark/Desktop/Evil-Hangman/main/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Mark/Desktop/Evil-Hangman/main/cmake-build-debug/CMakeFiles/evilHangman.dir
-C:/Users/Mark/Desktop/Evil-Hangman/main/cmake-build-debug/CMakeFiles/edit_cache.dir
+H:/CSI_3334/Evil-Hangman/main/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+H:/CSI_3334/Evil-Hangman/main/cmake-build-debug/CMakeFiles/evilHangman.dir
+H:/CSI_3334/Evil-Hangman/main/cmake-build-debug/CMakeFiles/edit_cache.dir
