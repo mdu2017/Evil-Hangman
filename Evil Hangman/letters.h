@@ -68,7 +68,12 @@ void Letter::findLetter(char let){
     char input;
 
     alphabet.open("Alphabet.txt");
-    let -= 32;
+    if(let == ' '){
+        let = '_';
+    }
+    else if(let != '!') {
+        let -= 32;
+    }
 
     do{
         alphabet >> input;
