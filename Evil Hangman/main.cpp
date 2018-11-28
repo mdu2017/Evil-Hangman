@@ -63,20 +63,53 @@ const Rectangle ROPE(Point(497, 100), Point(500, 150), RED);
 const int MAX_BINS = 1000;
 
 //Data structure
+// Description: Function returns the largest group of words based on the character guessed
+// Return: Vector of the largest group of words
+// Precondition: The current vector of words exists
+// Postcondition: The largest group of words is returned
 vector<string> getGreatest(int, char, vector<string>);
 
+// Description: Function plots "YOU WIN!" to the screen
+// Return: void
+// Precondition: SDL_Plotter exists
+// Postcondition: The phrase "YOU WIN!" has been plotted to the screen
 void plotWinScreen(SDL_Plotter &g);
 
+// Description: Function plots a black screen using the SDL_Plotter
+// Return: void
+// Precondition: SDL_Plotter exists
+// Postcondition: The screen is black
 void plotBlackScreen(SDL_Plotter &g);
 
+// Description: Function plots "YOU LOSE!" and completes the 
+// word on the screen
+// Return: void
+// Precondition: SDL_Plotter exists
+// Postcondition: The phrase "YOU LOSE!" and the correct word is plotted to the screen
 void plotDeadScreen(SDL_Plotter &g, string word);
 
+// Description: Function plots the starting screen
+// Return: void
+// Precondition: SDL_Plotter exists
+// Postcondition: The starting screen has been plotted to the screen
 void plotStartScreen(SDL_Plotter &g);
 
+// Description: Function plots the string that is entered into the function
+// Return: void
+// Precondition: SDL_Plotter exists
+// Postcondition: The string is plotted to the screen
 void plotString(SDL_Plotter &g, string word, int scale, Color color, Point p1, int space=50);
 
+// Description: Function plots the input screen
+// Return: void
+// Precondition: SDL_Plotter exists
+// Postcondition: The input screen is plotted
 void plotInputScreen(SDL_Plotter &g, int &size);
 
+// Description: Function runs the main game
+// Return: void
+// Precondition: SDL_Plotter exists
+// Postcondition: The main game has been started
 void mainGame(SDL_Plotter &g);
 
 int main(int argc, char **argv) {
