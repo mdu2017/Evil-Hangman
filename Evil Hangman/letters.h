@@ -71,8 +71,15 @@ void Letter::findLetter(char let){
     if(let == ' '){
         let = '_';
     }
-    else if(let != '!') {
+    else if(let > 57) {
         let -= 32;
+    }else {
+        if (let == '0'){
+            let = '+';
+        }
+        if (let == '1'){
+            let = '*';
+        }
     }
 
     do{

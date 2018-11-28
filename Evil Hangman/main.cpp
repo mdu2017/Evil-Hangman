@@ -75,196 +75,35 @@ void plotStartScreen(SDL_Plotter &g);
 
 void plotString(SDL_Plotter &g, string word, int scale, Color color, Point p1, int space=50);
 
-void plotInputScreen(SDL_Plotter &g);
+void plotInputScreen(SDL_Plotter &g, int &size);
+
+void mainGame(SDL_Plotter &g);
 
 int main(int argc, char **argv) {
-    bool stopped = false, quit = false, play = false;
-    int R,G,B;
-    int headRadius = 10;
-    int count = 0;
-    int x, y, size;
-    char key;
-    char wordSize[2];
-    ifstream input;
-    string filename = "dictionary.txt";
-    input.open(filename);
-
-    assert(input);
-
+    char key = 0;
+    bool quit = false, play = false;
     //Creating SDL plotter
     SDL_Plotter g(SCREEN_Y,SCREEN_X);
 
-    //print black screen
-    plotBlackScreen(g);
-    plotStartScreen(g);
-
-    //for now, will remove
-    g.Sleep(3000);
-
-    /*
     do {
+        quit = false;
+        play = false;
+        plotBlackScreen(g);
+        plotStartScreen(g);
         do {
             if(g.kbhit()) {
                 key = g.getKey();
-                if(key == 80){
-                    play = true;
-                } else if(key == 81){
+                if(key == 81){
                     quit = true;
+                } else {
+                    play = true;
                 }
             }
-        }while(!play);
-
-
-        //everything else
+        }while(!quit && !play);
+        if (play){
+            mainGame(g);
+        }
     }while(!quit);
-    */
-
-    //after they click p
-    plotBlackScreen(g);
-    plotInputScreen(g);
-
-
-
-    //Get word size (must enter 0-9)
-    do{
-        if(g.kbhit()) {
-            key = g.getKey();
-            if(key != SDL_SCANCODE_RETURN ){
-                if ( key < 58 && key > 47){
-                    wordSize[count++] = key;
-                    cout << key <<endl;
-                }
-            }
-        }
-    }while(key != SDL_SCANCODE_RETURN);
-
-    count = 0;
-    size = atoi(wordSize);
-
-    //INPUT VERIFICATION
-    if(!size){
-        size = DEFAULT_SIZE;
-    }
-    if(size > 21){
-        size = DEFAULT_SIZE;
-    }
-    if(size < 3){
-        size = DEFAULT_SIZE;
-    }
-
-    cout << size << endl;
-
-    char status[size];
-
-    for(int i =0; i < size; i ++){
-        status[i] = '0';
-    }
-
-    bool dead = false;
-    bool correct = false;
-    bool guessed = false;
-
-    vector<string> wordList;
-    string word;
-    char guess;
-
-    while(input >> word){
-        if(word.length() == size){
-            wordList.push_back(word);
-        }
-    }
-
-    while (!g.getQuit() && !dead)
-    {
-        plotBlackScreen(g);
-        BASE.draw(g);
-        BASE2.draw(g);
-        BASE3.draw(g);
-        ROPE.draw(g);
-        drawLines(g, LETTER_LINES, size);
-
-        while(!dead && !correct){
-            if(g.kbhit()) {
-                guess = g.getKey();
-                guess += 32;
-                wordList = getGreatest(size, guess, wordList);
-
-                for (int i = 0; i< size; i++){
-                    if(guess == status[i]){
-                        guessed = true;
-                    }
-                }
-
-                if(!guessed){
-                    for (int i = 0; i < size; i++) {
-                        if (wordList[0].at(i) == guess) {
-                            status[i] = guess;
-                        }
-                    }
-                }
-
-                for (int i = 0; i < size; i++) {
-                    cout << status[i];
-                }
-                cout << endl;
-
-                if (wordList[0].find(guess) == -1) {
-                    count++;
-                    switch (count) {
-                        case 6:
-                            drawRightLeg(g, RIGHT_LEG);
-                            dead = true;
-                        case 5:
-                            drawLeftLeg(g, LEFT_LEG);
-                        case 4:
-                            drawRightArm(g, RIGHT_ARM);
-                        case 3:
-                            drawLeftArm(g, LEFT_ARM);
-                        case 2:
-                            drawBody(g, BODY);
-                        case 1:
-                            drawHead(g, HEAD_RADIUS, HEAD_CENTER_X, HEAD_CENTER_Y);
-                    }
-                }
-                else {
-                    if (!guessed){
-                        for (int i = 0; i < size; i++){
-                            if (status[i] == guess){
-                                drawLetters(g, guess, i, size);
-                            }
-                        }
-                    }else {
-                        count++;
-                    }
-                    g.update();
-                }
-
-                guessed = false;
-                correct = true;
-
-                for (int i = 0; i < size && correct; i++) {
-                    if (wordList[0].at(i) != status[i]) {
-                        correct = false;
-                    }
-                }
-            }
-        }
-        if(dead){
-            plotDeadScreen(g, wordList.front());
-            g.Sleep(3000);
-        }
-        if(correct) {
-            plotWinScreen(g);
-            g.Sleep(3000);
-        }
-
-        //Click with mouse to pause
-        if(g.getMouseClick(x,y)){
-            stopped = !stopped;
-        }
-
-        g.update();
-    }
 
     return 0;
 }
@@ -348,10 +187,8 @@ void drawLines(SDL_Plotter& g, Line line, int size){
     int newX;
     int lineLength = (480/size);
 
-
     //Adjust line size
     Line newLines[size];
-
 
     //draw lines and letters
     for(int i = 0; i < size; i++){
@@ -433,8 +270,7 @@ void plotWinScreen(SDL_Plotter &g){
 }
 
 void plotBlackScreen(SDL_Plotter &g){
-    Rectangle black(Point(1, 1), Point(SCREEN_X-1, SCREEN_Y-1), BLACK);
-    black.draw(g);
+    g.clear();
     g.update();
 }
 
@@ -455,7 +291,13 @@ void plotStartScreen(SDL_Plotter &g){
     g.update();
 }
 
-void plotInputScreen(SDL_Plotter &g){
+void plotInputScreen(SDL_Plotter &g, int &size){
+    char key;
+    char wordSize[2] = {0, 0};
+    string ws;
+    int count = 0;
+    size = 0;
+
     string choose = "choose your punishment";
     string num = "enter a number";
     string range = "between three and twenty one";
@@ -469,6 +311,186 @@ void plotInputScreen(SDL_Plotter &g){
     plotString(g, range, 1, RED, p3, 25);
     plotString(g, enter, 1, GOLD, p4, 25);
 
+    //Get word size (must enter 0-9)
+    do{
+        if(g.kbhit()) {
+            key = g.getKey();
+            if(key != SDL_SCANCODE_RETURN ){
+                if ( key < 58 && key > 47){
+                    wordSize[count++] = key;
+                    cout << key << endl;
+                }
+            }
+        }
+    }while(key != SDL_SCANCODE_RETURN);
+
+    size = atoi(wordSize);
+
+    if (wordSize[0] == 0){
+        ws += '7';
+    }
+    else {
+        for (int i = 0; wordSize[i] != 0 && i < 2; i++){
+            ws += wordSize[i];
+        }
+
+    }
+
+    Point p(400, 500);
+    plotString(g, ws, 2, GOLD, p);
+    g.update();
+    g.Sleep(500);
+
+    //INPUT VERIFICATION
+    if(!size){
+        size = DEFAULT_SIZE;
+    }
+    if(size > 21){
+        size = DEFAULT_SIZE;
+    }
+    if(size < 3){
+        size = DEFAULT_SIZE;
+    }
+
+    char status[size];
+
+    for(int i =0; i < size; i ++){
+        status[i] = '0';
+    }
 
     g.update();
+}
+
+void mainGame(SDL_Plotter &g){
+    bool stopped = false, quit = false, play = false;
+    int count = 0;
+    int x, y, size;
+    ifstream input;
+    string filename = "dictionary.txt";
+    input.open(filename);
+
+    assert(input);
+
+    plotBlackScreen(g);
+    plotInputScreen(g, size);
+
+    count = 0;
+
+    char status[size];
+
+    for(int i =0; i < size; i ++){
+        status[i] = '0';
+    }
+
+    bool dead = false;
+    bool correct = false;
+    bool guessed = false;
+
+    vector<string> wordList;
+    string word;
+    char guess;
+
+    while(input >> word){
+        if(word.length() == size){
+            wordList.push_back(word);
+        }
+    }
+
+    g.setQuit(false); 
+    while (!g.getQuit() && !dead)
+    {
+        plotBlackScreen(g);
+        BASE.draw(g);
+        BASE2.draw(g);
+        BASE3.draw(g);
+        ROPE.draw(g);
+        drawLines(g, LETTER_LINES, size);
+
+        while(!dead && !correct){
+            if(g.kbhit()) {
+                guess = g.getKey();
+                guess += 32;
+                wordList = getGreatest(size, guess, wordList);
+
+                for (int i = 0; i< size; i++){
+                    if(guess == status[i]){
+                        guessed = true;
+                    }
+                }
+
+                if(!guessed){
+                    for (int i = 0; i < size; i++) {
+                        if (wordList[0].at(i) == guess) {
+                            status[i] = guess;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < size; i++) {
+                    cout << status[i];
+                }
+                cout << endl;
+
+                if (wordList[0].find(guess) == -1) {
+                    count++;
+                    switch (count) {
+                        case 6:
+                            drawRightLeg(g, RIGHT_LEG);
+                            dead = true;
+                        case 5:
+                            drawLeftLeg(g, LEFT_LEG);
+                        case 4:
+                            drawRightArm(g, RIGHT_ARM);
+                        case 3:
+                            drawLeftArm(g, LEFT_ARM);
+                        case 2:
+                            drawBody(g, BODY);
+                        case 1:
+                            drawHead(g, HEAD_RADIUS, HEAD_CENTER_X, HEAD_CENTER_Y);
+                    }
+                }
+                else {
+                    if (!guessed){
+                        for (int i = 0; i < size; i++){
+                            if (status[i] == guess){
+                                drawLetters(g, guess, i, size);
+                            }
+                        }
+                    }else {
+                        count++;
+                    }
+                    g.update();
+                }
+
+                guessed = false;
+                correct = true;
+
+                for (int i = 0; i < size && correct; i++) {
+                    if (wordList[0].at(i) != status[i]) {
+                        correct = false;
+                    }
+                }
+            }
+        }
+        if(dead){
+            plotDeadScreen(g, wordList.front());
+            g.Sleep(3000);
+            g.setQuit(true);
+        }
+        if(correct) {
+            plotWinScreen(g);
+            g.Sleep(3000);
+            g.setQuit(true);
+        }
+
+        //Click with mouse to pause
+        if(g.getMouseClick(x,y)){
+            stopped = !stopped;
+        }
+
+        g.update();
+    }
+
+    input.close();
+    g.clear();
 }
