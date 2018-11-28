@@ -205,10 +205,6 @@ int main(int argc, char **argv) {
                         correct = false;
                     }
                 }
-
-                if (count >= 10) {
-                    dead = true;
-                }
             }
         }
         if(dead){
