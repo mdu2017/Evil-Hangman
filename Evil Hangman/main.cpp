@@ -30,6 +30,7 @@ const Color RED  = Color(200, 17, 12);
 const Color GREEN = Color(0, 200, 0);
 const Color BROWN = Color(101, 67, 33);
 const Color BLACK = Color(0, 0, 0);
+const Color GOLD = Color(255,165,0);
 
 //Head location
 const int HEAD_CENTER_X = 500, HEAD_CENTER_Y = 175;
@@ -63,6 +64,12 @@ const int MAX_BINS = 1000;
 
 //Data structure
 vector<string> getGreatest(int, char, vector<string>);
+
+void plotWinScreen(SDL_Plotter &g);
+
+void plotDeadScreen(SDL_Plotter &g, string word);
+
+void plotString(SDL_Plotter &g, string word, int scale, Color color, Point p1, int space=50);
 
 int main(int argc, char **argv) {
     ifstream input;
@@ -354,3 +361,39 @@ void drawLetters(SDL_Plotter &g, char ch, int letterPos, int size){
     Letter let(ch, RED, letterScale, Point(newX, LINES_Y + letterOffsetY));
     let.draw(g);
  }
+
+void plotDeadScreen(SDL_Plotter &g, string word){
+    string phrase = "you lose!";
+    string yourWord = "your word was ";
+    Point p2;
+    p2.x = 700;
+    p2.y = 200;
+    plotString(g, phrase, 4, RED, p2, 75);
+    p2.x = 500;
+    p2.y = 500;
+    plotString(g, yourWord, 2, RED, p2, 50);
+    //p2.y = 600;
+    Point p3(500, 600);
+    plotString(g, word, 2, RED, p3, 50);
+}
+
+void plotString(SDL_Plotter &g, string word, int scale, Color color, Point p1, int space){
+    Letter wordLets[word.length()];
+    for(int i = 0; i < word.length(); i++){
+        wordLets[i].color = color;
+        wordLets[i].scale = scale;
+        wordLets[i].topLeftCorner = p1;
+        p1.x += space;
+        wordLets[i].letter = word[i];
+        wordLets[i].draw(g);
+    }
+}
+
+void plotWinScreen(SDL_Plotter &g){
+    string word = "you win!";
+    Point p1(600, 300);
+    plotString(g, word, 9, GOLD, p1, 125);
+
+    g.update();
+
+}
