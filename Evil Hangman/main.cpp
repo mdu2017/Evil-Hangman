@@ -206,7 +206,7 @@ int main(int argc, char **argv) {
                     }
                 }
 
-                if (count >= 20) {
+                if (count >= 10) {
                     dead = true;
                 }
             }
