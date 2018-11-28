@@ -362,17 +362,18 @@ void drawLetters(SDL_Plotter &g, char ch, int letterPos, int size){
 
 void plotDeadScreen(SDL_Plotter &g, string word){
     string phrase = "you lose!";
-    string yourWord = "your word was ";
+    string yourWord = "your word was";
     Point p2;
-    p2.x = 700;
-    p2.y = 200;
+    p2.x = 550;
+    p2.y = 100;
     plotString(g, phrase, 4, RED, p2, 75);
-    p2.x = 500;
-    p2.y = 500;
+    p2.x = 450;
+    p2.y = 475;
     plotString(g, yourWord, 2, RED, p2, 50);
-    //p2.y = 600;
-    Point p3(500, 600);
-    plotString(g, word, 2, RED, p3, 50);
+    for(int i = 0; i < word.length(); i++){
+        drawLetters(g, word[i], i, word.length());
+    }
+    g.update();
 }
 
 void plotString(SDL_Plotter &g, string word, int scale, Color color, Point p1, int space){
@@ -385,12 +386,13 @@ void plotString(SDL_Plotter &g, string word, int scale, Color color, Point p1, i
         wordLets[i].letter = word[i];
         wordLets[i].draw(g);
     }
+    g.update();
 }
 
 void plotWinScreen(SDL_Plotter &g){
     string word = "you win!";
     Point p1(600, 300);
-    plotString(g, word, 9, GOLD, p1, 125);
+    plotString(g, word, 4, GOLD, p1, 50);
 
     g.update();
 
