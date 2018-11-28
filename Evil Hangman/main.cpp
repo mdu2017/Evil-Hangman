@@ -14,9 +14,19 @@
 
 using namespace std;
 
+//Screen size & default size
+const int SCREEN_X = 1200;
+const int SCREEN_Y = 720;
+const int DEFAULT_SIZE = 7;
+
+//Drawing lines at bottom
+const int SPACE_BTWN_LINES = 30;
+const int INIT_X = 100;
+const int LINES_Y = 625;
+
 //Colors
 const Color BLUE = Color(0, 0, 200);
-const Color RED  = Color(200, 0, 0);
+const Color RED  = Color(200, 17, 12);
 const Color GREEN = Color(0, 200, 0);
 const Color BROWN = Color(101, 67, 33);
 const Color BLACK = Color(0, 0, 0);
@@ -26,12 +36,12 @@ const int HEAD_CENTER_X = 500, HEAD_CENTER_Y = 175;
 const int HEAD_RADIUS = 25;
 
 //Line for body parts
-const Line BODY(Point(500, 175), Point(501, 325), BLUE);
-const Line LEFT_ARM(Point(500, 225), Point(425, 300), BLUE);
-const Line RIGHT_ARM(Point(500, 225), Point(575, 300), BLUE);
-const Line LEFT_LEG(Point(501,325), Point(450, 425), BLUE);
-const Line RIGHT_LEG(Point(501, 325), Point(550, 425), BLUE);
-const Line LETTER_LINES(Point(150, 600), Point(250, 600), BLACK);
+const Line BODY(Point(500, 175), Point(501, 325), RED);
+const Line LEFT_ARM(Point(500, 225), Point(425, 300), RED);
+const Line RIGHT_ARM(Point(500, 225), Point(575, 300), RED);
+const Line LEFT_LEG(Point(501,325), Point(450, 425), RED);
+const Line RIGHT_LEG(Point(501, 325), Point(550, 425), RED);
+const Line LETTER_LINES(Point(150, 600), Point(250, 600), RED);
 
 //Functions for drawing body parts
 void drawHead(SDL_Plotter& g, int radius, int centerX, int centerY);
@@ -41,16 +51,17 @@ void drawRightArm(SDL_Plotter& g, Line rArm);
 void drawLeftLeg(SDL_Plotter& g, Line lLeg);
 void drawRightLeg(SDL_Plotter& g, Line rLeg);
 void drawLines(SDL_Plotter& g, Line line, int size);
-void drawLetters(SDL_Plotter &g, char ch, int LetterPos);
+void drawLetters(SDL_Plotter &g, char ch, int LetterPos, int size);
 
 //Rectangle for hanger
-const Rectangle BASE(Point(150, 450), Point(350, 500), BLACK);
-const Rectangle BASE2(Point(235, 100), Point(255, 450), BLACK);
-const Rectangle BASE3(Point(235, 80), Point(500, 100), BLACK);
+const Rectangle BASE(Point(150, 450), Point(350, 500), RED);
+const Rectangle BASE2(Point(235, 100), Point(255, 450), RED);
+const Rectangle BASE3(Point(235, 80), Point(500, 100), RED);
 const Rectangle ROPE(Point(497, 100), Point(500, 150), RED);
 
 const int MAX_BINS = 1000;
 
+//Data structure
 vector<string> getGreatest(int, char, vector<string>);
 
 int main(int argc, char **argv) {
@@ -60,7 +71,8 @@ int main(int argc, char **argv) {
 
     assert(input);
 
-    SDL_Plotter g(1066,1600);
+    //Creating SDL plotter
+    SDL_Plotter g(SCREEN_Y,SCREEN_X);
     bool stopped = false;
     int R,G,B;
     int headRadius = 10;
@@ -69,6 +81,10 @@ int main(int argc, char **argv) {
     char key;
     char wordSize[2];
 
+    Rectangle bg(Point(1, 1), Point(SCREEN_X-1, SCREEN_Y-1), BLACK);
+    bg.draw(g);
+
+    //Get word size (must enter 0-9)
     do{
         if(g.kbhit()) {
             key = g.getKey();
@@ -84,11 +100,15 @@ int main(int argc, char **argv) {
     count = 0;
     size = atoi(wordSize);
 
+    //INPUT VERIFICATION
     if(!size){
-        size = 7;
+        size = DEFAULT_SIZE;
     }
     if(size > 21){
-        size = 7;
+        size = DEFAULT_SIZE;
+    }
+    if(size < 3){
+        size = DEFAULT_SIZE;
     }
 
     cout << size << endl;
@@ -168,7 +188,7 @@ int main(int argc, char **argv) {
                     if (!guessed){
                         for (int i = 0; i < size; i++){
                             if (status[i] == guess){
-                                drawLetters(g, guess, i);
+                                drawLetters(g, guess, i, size);
                             }
                         }
                     }else {
@@ -186,7 +206,7 @@ int main(int argc, char **argv) {
                     }
                 }
 
-                if (count >= 10) {
+                if (count >= 20) {
                     dead = true;
                 }
             }
@@ -289,60 +309,52 @@ void drawRightLeg(SDL_Plotter& g, Line rLeg){
 
 void drawLines(SDL_Plotter& g, Line line, int size){
 
-    if (size > 15)
-    {
-        for(int i = 0; i < 15; i++){
-            Point p1(150 + 75    * i, 800);
-            Point p2(200 + 75 * i, 800);
-            line.setP1(p1);
-            line.setP2(p2);
+    int newX;
+    int lineLength = (480/size);
 
-            line.draw(g);
-        }
 
-        size -= 15;
+    //Adjust line size
+    Line newLines[size];
 
-        Point p1(1300, 750);
-        Point p2(1325, 750);
-        line.setP1(p1);
-        line.setP2(p2);
 
-        line.draw(g);
+    //draw lines and letters
+    for(int i = 0; i < size; i++){
+        newX = INIT_X + (i*SPACE_BTWN_LINES) + (i*lineLength);
 
-        for(int i = 0; i < size; i++){
-            Point p1(150 + 75    * i, 950);
-            Point p2(200 + 75 * i, 950);
-            line.setP1(p1);
-            line.setP2(p2);
-
-            line.draw(g);
-        }
+        newLines[i] = Line(Point(newX, LINES_Y), Point(newX+lineLength,LINES_Y), RED);
+        //Line *newLine = new Line(Point(newX, LINES_Y), Point(newX+lineLength,LINES_Y), BLACK);
+        newLines[i].draw(g);
     }
-    else {
-        for(int i = 0; i < size; i++){
-            Point p1(150 + 75 * i, 800);
-            Point p2(200 + 75 * i, 800);
-            line.setP1(p1);
-            line.setP2(p2);
 
-            line.draw(g);
-        }
-    }
+
 }
 
-void drawLetters(SDL_Plotter &g, char ch, int letterPos){
-    if (letterPos <= 15){
-        Point p1(160 + 75 * letterPos, 750);
+void drawLetters(SDL_Plotter &g, char ch, int letterPos, int size){
 
-        Letter let(ch, BLACK, 2, p1);
-        let.draw(g);
+    int letterScale;
+    int letterOffsetY;
+    int lineLength = (480/size);
+    int letterOffsetX = lineLength/2;
+    int newX = 0;
+
+
+    if(size >= 14){
+        letterScale = 1;
+        letterOffsetX -= 5;
+        letterOffsetY = -20;
     }
-    else {
-        letterPos -= 15;
-        Point p1(160 + 75 * letterPos, 900);
-
-        Letter let(ch, BLACK, 2, p1);
-        let.draw(g);
+    else if(size >= 10){
+        letterScale = 2;
+        letterOffsetX -= 10;
+        letterOffsetY = -30;
+    }
+    else{
+        letterScale = 3;
+        letterOffsetX -= 15;
+        letterOffsetY = -40;
     }
 
+    newX = (INIT_X + (letterPos*SPACE_BTWN_LINES) + (letterPos*lineLength)) + letterOffsetX;
+    Letter let(ch, RED, letterScale, Point(newX, LINES_Y + letterOffsetY));
+    let.draw(g);
  }

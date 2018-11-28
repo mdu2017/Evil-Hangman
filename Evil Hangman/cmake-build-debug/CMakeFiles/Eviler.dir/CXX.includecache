@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/SDL_Plotter.h
+H:/Evil-Hangman/Evil Hangman/SDL_Plotter.h
 SDL2/SDL.h
 -
 SDL2/SDL_mixer.h
@@ -20,37 +20,37 @@ string
 map
 -
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/color.h
+H:/Evil-Hangman/Evil Hangman/color.h
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/letters.h
+H:/Evil-Hangman/Evil Hangman/letters.h
 fstream
 -
 shapes.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/shapes.h
+H:/Evil-Hangman/Evil Hangman/shapes.h
 rectangle.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/rectangle.h
+H:/Evil-Hangman/Evil Hangman/rectangle.h
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/line.h
+H:/Evil-Hangman/Evil Hangman/line.h
 cmath
 -
 ostream
 -
 color.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/color.h
+H:/Evil-Hangman/Evil Hangman/color.h
 point.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/point.h
+H:/Evil-Hangman/Evil Hangman/point.h
 SDL_Plotter.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/SDL_Plotter.h
+H:/Evil-Hangman/Evil Hangman/SDL_Plotter.h
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/main.cpp
+H:/Evil-Hangman/Evil Hangman/main.cpp
 SDL_Plotter.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/SDL_Plotter.h
+H:/Evil-Hangman/Evil Hangman/SDL_Plotter.h
 line.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/line.h
+H:/Evil-Hangman/Evil Hangman/line.h
 rectangle.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/rectangle.h
+H:/Evil-Hangman/Evil Hangman/rectangle.h
 letters.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/letters.h
+H:/Evil-Hangman/Evil Hangman/letters.h
 iostream
 -
 cstdlib
@@ -70,27 +70,27 @@ cmath
 cassert
 -
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/point.h
+H:/Evil-Hangman/Evil Hangman/point.h
 cmath
 -
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/rectangle.h
+H:/Evil-Hangman/Evil Hangman/rectangle.h
 point.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/point.h
+H:/Evil-Hangman/Evil Hangman/point.h
 color.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/color.h
+H:/Evil-Hangman/Evil Hangman/color.h
 SDL_Plotter.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/SDL_Plotter.h
+H:/Evil-Hangman/Evil Hangman/SDL_Plotter.h
 cmath
 -
 
-C:/Users/BEGGS/CLion Projects/Evil Hangman/shapes.h
+H:/Evil-Hangman/Evil Hangman/shapes.h
 color.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/color.h
+H:/Evil-Hangman/Evil Hangman/color.h
 point.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/point.h
+H:/Evil-Hangman/Evil Hangman/point.h
 cmath
 -
 SDL_Plotter.h
-C:/Users/BEGGS/CLion Projects/Evil Hangman/SDL_Plotter.h
+H:/Evil-Hangman/Evil Hangman/SDL_Plotter.h
 

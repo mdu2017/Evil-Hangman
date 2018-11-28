@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug"/>
+				<Option working_dir="H:/Evil-Hangman/Evil Hangman/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Eviler">
-				<Option output="C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Eviler.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug"/>
+				<Option output="H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Eviler.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="H:/Evil-Hangman/Evil Hangman/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -33,15 +33,15 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 Eviler"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 Eviler"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Eviler/fast">
-				<Option output="C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Eviler.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug"/>
+				<Option output="H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Eviler.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="H:/Evil-Hangman/Evil Hangman/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,58 +55,58 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 Eviler/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 Eviler/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug"/>
+				<Option working_dir="H:/Evil-Hangman/Evil Hangman/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug"/>
+				<Option working_dir="H:/Evil-Hangman/Evil Hangman/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/BEGGS/CLion Projects/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;H:/Evil-Hangman/Evil Hangman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/SDL_Plotter.h">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/SDL_Plotter.h">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/color.h">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/color.h">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/letters.h">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/letters.h">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/line.h">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/line.h">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/main.cpp">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/main.cpp">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/point.h">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/point.h">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/rectangle.h">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/rectangle.h">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/shapes.h">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/shapes.h">
 			<Option target="Eviler"/>
 		</Unit>
-		<Unit filename="C:/Users/BEGGS/CLion Projects/Evil Hangman/CMakeLists.txt">
+		<Unit filename="H:/Evil-Hangman/Evil Hangman/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
