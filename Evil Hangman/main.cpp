@@ -67,11 +67,24 @@ vector<string> getGreatest(int, char, vector<string>);
 
 void plotWinScreen(SDL_Plotter &g);
 
+void plotBlackScreen(SDL_Plotter &g);
+
 void plotDeadScreen(SDL_Plotter &g, string word);
+
+void plotStartScreen(SDL_Plotter &g);
 
 void plotString(SDL_Plotter &g, string word, int scale, Color color, Point p1, int space=50);
 
+void plotInputScreen(SDL_Plotter &g);
+
 int main(int argc, char **argv) {
+    bool stopped = false, quit = false, play = false;
+    int R,G,B;
+    int headRadius = 10;
+    int count = 0;
+    int x, y, size;
+    char key;
+    char wordSize[2];
     ifstream input;
     string filename = "dictionary.txt";
     input.open(filename);
@@ -80,16 +93,37 @@ int main(int argc, char **argv) {
 
     //Creating SDL plotter
     SDL_Plotter g(SCREEN_Y,SCREEN_X);
-    bool stopped = false;
-    int R,G,B;
-    int headRadius = 10;
-    int count = 0;
-    int x, y, size;
-    char key;
-    char wordSize[2];
 
-    Rectangle bg(Point(1, 1), Point(SCREEN_X-1, SCREEN_Y-1), BLACK);
-    bg.draw(g);
+    //print black screen
+    plotBlackScreen(g);
+    plotStartScreen(g);
+
+    //for now, will remove
+    g.Sleep(3000);
+
+    /*
+    do {
+        do {
+            if(g.kbhit()) {
+                key = g.getKey();
+                if(key == 80){
+                    play = true;
+                } else if(key == 81){
+                    quit = true;
+                }
+            }
+        }while(!play);
+
+
+        //everything else
+    }while(!quit);
+    */
+
+    //after they click p
+    plotBlackScreen(g);
+    plotInputScreen(g);
+
+
 
     //Get word size (must enter 0-9)
     do{
@@ -142,6 +176,7 @@ int main(int argc, char **argv) {
 
     while (!g.getQuit() && !dead)
     {
+        plotBlackScreen(g);
         BASE.draw(g);
         BASE2.draw(g);
         BASE3.draw(g);
@@ -358,7 +393,7 @@ void drawLetters(SDL_Plotter &g, char ch, int letterPos, int size){
     newX = (INIT_X + (letterPos*SPACE_BTWN_LINES) + (letterPos*lineLength)) + letterOffsetX;
     Letter let(ch, RED, letterScale, Point(newX, LINES_Y + letterOffsetY));
     let.draw(g);
- }
+}
 
 void plotDeadScreen(SDL_Plotter &g, string word){
     string phrase = "you lose!";
@@ -395,5 +430,45 @@ void plotWinScreen(SDL_Plotter &g){
     plotString(g, word, 4, GOLD, p1, 50);
 
     g.update();
+}
 
+void plotBlackScreen(SDL_Plotter &g){
+    Rectangle black(Point(1, 1), Point(SCREEN_X-1, SCREEN_Y-1), BLACK);
+    black.draw(g);
+    g.update();
+}
+
+void plotStartScreen(SDL_Plotter &g){
+    string welcome = "welcome to";
+    string evil = "evil hangman";
+    string play = "press p to play";
+    string quit = "press q to quit";
+    Point p1(300, 200);
+    Point p2(300, 250);
+    Point p3(300, 450);
+    Point p4(300, 500);
+    plotString(g, welcome, 2, RED, p1, 50);
+    plotString(g, evil, 2, RED, p2, 50);
+    plotString(g, play, 1, RED, p3, 25);
+    plotString(g, quit, 1, RED, p4, 25);
+
+    g.update();
+}
+
+void plotInputScreen(SDL_Plotter &g){
+    string choose = "choose your punishment";
+    string num = "enter a number";
+    string range = "between three and twenty one";
+    string enter = "then press enter";
+    Point p1(200, 300);
+    Point p2(200, 350);
+    Point p3(200, 400);
+    Point p4(200, 450);
+    plotString(g, choose, 1, RED, p1, 25);
+    plotString(g, num, 1, RED, p2, 25);
+    plotString(g, range, 1, RED, p3, 25);
+    plotString(g, enter, 1, GOLD, p4, 25);
+
+
+    g.update();
 }
