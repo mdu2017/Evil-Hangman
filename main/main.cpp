@@ -46,7 +46,6 @@ const Line RIGHT_LEG(Point(501, 325), Point(550, 425), RED);
 const Line LETTER_LINES(Point(150, 600), Point(250, 600), RED);
 
 //Functions for drawing body parts
-void drawHead(SDL_Plotter& g, int radius, int centerX, int centerY);
 void drawBody(SDL_Plotter& g, Line body);
 void drawLeftArm(SDL_Plotter& g, Line lArm);
 void drawRightArm(SDL_Plotter& g, Line rArm);
@@ -278,21 +277,6 @@ vector<string> getGreatest(int size, char guess, vector<string> wordList){
         letterHash = 0;
     }
     return bins[maxWordsIndex];
-}
-
-void drawHead(SDL_Plotter& g, int radius, int centerX, int centerY){
-
-    for(int x = -radius; x <= radius; x++)
-    {
-        for(int y = -radius; y <= radius; y++)
-        {
-            if(sqrt(x*x + y*y) <= radius)
-            {
-                g.plotPixel(centerX + x, centerY + y, 20, 20, 220);
-            }
-        }
-    }
-    g.update();
 }
 
 void drawBody(SDL_Plotter& g, Line body){
