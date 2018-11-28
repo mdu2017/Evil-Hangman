@@ -215,14 +215,12 @@ int main(int argc, char **argv) {
             }
         }
         if(dead){
-            cout<<"YOU DIED HAHAHAHAH"<<endl;
-            for(auto n: wordList){
-                cout <<n << endl;
-            }
+            plotDeadScreen(g, wordList.front());
+            g.Sleep(3000);
         }
         if(correct) {
-            cout << "YOU GOT IT RIGHT.... THIS TIME" << endl;
-            dead = true;
+            plotWinScreen(g);
+            g.Sleep(3000);
         }
 
         //Click with mouse to pause
